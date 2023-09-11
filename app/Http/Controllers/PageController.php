@@ -9,7 +9,6 @@ class PageController extends Controller
     //Home
     public function home()
     {
-        //return view('/pages/home');
         return view('/pages/home');
     }
 
