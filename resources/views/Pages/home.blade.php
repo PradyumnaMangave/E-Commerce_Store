@@ -1,3 +1,5 @@
-Hello, {{ $name }}.
-<br>
-Welcome to Home blade file.
+@extends('layouts.master')
+@section('name','Home Page')
+@section('content')
+    Home Page Section
+@endsection
