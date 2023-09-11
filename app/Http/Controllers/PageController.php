@@ -10,7 +10,7 @@ class PageController extends Controller
     public function home()
     {
         //return view('/pages/home');
-        return view('/pages/home', ['name' => 'Pradyumna']);
+        return view('/pages/home');
     }
 
 
