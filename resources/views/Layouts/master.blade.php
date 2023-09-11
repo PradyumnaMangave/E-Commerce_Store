@@ -8,7 +8,9 @@
 </head>
 <body>
     @include('layouts.partials.nav')
+    <main class="page">
     @yield('content')
+    </main>
     @include('layouts.partials.footer')
 </body>
 </html>
