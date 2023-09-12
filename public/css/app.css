@@ -23,6 +23,10 @@ body {
   background: #260064;
 }
 
+.btn-block {
+  width: 100%;
+}
+
 .menu {
   background: #6100ff;
   height: 60px;
@@ -116,7 +120,7 @@ ul li a:hover {
 }
 
 .login-page {
-  min-height: 100vh;
+  min-height: 85vh;
   background: #f5f5f5;
   display: flex;
   justify-content: center;
@@ -126,8 +130,8 @@ ul li a:hover {
 .login-form-box {
   background: #fff;
   border-radius: 10px;
-  padding: 50px;
-  box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
   width: 500px;
   max-width: 100%;
 }
@@ -145,7 +149,7 @@ ul li a:hover {
 }
 .field input {
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px 5px;
   border-radius: 200px;
   border: 1px solid #ddd;
 }
