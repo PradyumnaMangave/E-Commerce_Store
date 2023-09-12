@@ -2,7 +2,7 @@
 @section('name','Register Page')
 @section('content')
     <section class="login-page">
-        <div class="LogIn-form-box">
+        <div class="login-form-box">
             <div class="login-title">Register</div>
             <div class="login-form">
                 <form action="" method="post">
