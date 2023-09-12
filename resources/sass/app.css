@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -63,6 +63,7 @@ ul li a:hover {
 
 .home-header {
   background: linear-gradient(to bottom, #6100ff, #d38eff);
+  background: red;
   padding: 100px 25px 120px;
   display: flex;
   justify-content: center;
@@ -97,4 +98,4 @@ ul li a:hover {
 }
 .home-header-search input:focus {
   outline: none;
-}
+}/*# sourceMappingURL=app.css.map */

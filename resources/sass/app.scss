@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
 
 @import '_global.sass';
-@import '_variable.sass';
+@import '_variable.scss';
 
 @import './Partials/_nav.sass';
 
 //pages
-//@import './Pages/home.sass';
 @import './pages/home.sass'
