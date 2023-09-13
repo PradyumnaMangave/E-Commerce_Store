@@ -1,8 +1,8 @@
 <aside class="side-nav">
 
-<div class="log">
+<div class="logo">
 <img src="{{asset('images/logo.svg')}}" alt="">
-Admin Panel
+    Admin Panel
 </div>
 
 <ul>
