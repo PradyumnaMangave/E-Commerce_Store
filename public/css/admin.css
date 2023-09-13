@@ -27,6 +27,14 @@ body {
   width: 100%;
 }
 
+.admin-main {
+  margin-left: 250px;
+}
+.admin-main .page-title {
+  color: #6100ff;
+  margin-bottom: 15px;
+}
+
 .side-nav {
   background: #6100ff;
   position: fixed;
@@ -73,4 +81,24 @@ body {
   color: #6100ff;
   font-weight: 500;
   transform: skewX(-15deg);
+}
+.side-nav ul .logout button {
+  background: rgba(255, 0, 0, 0.3411764706);
+  border: 1px solid grey;
+  left: 15px;
+  bottom: 15px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  border-radius: 200px;
+  font-size: 15px;
+  transition: all 0.4s ease;
+  font-weight: 600;
+  font-style: italic;
+  cursor: pointer;
+}
+.side-nav ul .logout button:hover {
+  background: #e91e1e;
 }
