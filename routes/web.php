@@ -32,5 +32,5 @@ Route::post('/login', [AuthController::class,'postLogin'])->name('login')->middl
 Route::post('/logout', [AuthController::class,'logout'])->name('logout')->middleware('auth');
 
 //Admin Panel
-Route::get('/adminpanel', [AdminController::class,'dashboard'])->name('dashboard')->middleware('auth');
+Route::get('/adminpanel', [AdminController::class,'dashboard'])->name('dashboard')->middleware('admin');
 
