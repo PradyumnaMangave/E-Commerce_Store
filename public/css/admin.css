@@ -33,12 +33,11 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 100px;
+  width: 250px;
   padding: 40px 0;
   color: #fff;
 }
-
-.logo {
+.side-nav .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,10 +45,32 @@ body {
   font-weight: 600;
   font-size: 20px;
   border-bottom: 1px dashed grey;
-  padding-bottom: 15px;
-  margin-bottom: 40px;
+  padding-bottom: 100px;
+  margin-bottom: 20px;
 }
-.logo img {
-  height: 45px;
-  max-width: 100%;
+.side-nav .logo img {
+  height: 100px;
+  max-width: 80%;
+}
+.side-nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 50px;
+  padding: 0 10px;
+}
+.side-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  background-color: #4900c7;
+  border-radius: 3px;
+  font-weight: 200;
+  display: flex;
+}
+.side-nav ul li a:hover {
+  background: #fff;
+  color: #6100ff;
+  font-weight: 500;
+  transform: skewX(-15deg);
 }
