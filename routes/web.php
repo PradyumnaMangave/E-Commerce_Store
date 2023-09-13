@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
@@ -29,3 +30,7 @@ Route::post('/register', [AuthController::class,'postRegister'])->name('register
 Route::post('/login', [AuthController::class,'postLogin'])->name('login')->middleware('guest');
 
 Route::post('/logout', [AuthController::class,'logout'])->name('logout')->middleware('auth');
+
+//Admin Panel
+Route::get('/adminpanel', [AdminController::class,'dashboard'])->name('dashboard')->middleware('auth');
+
