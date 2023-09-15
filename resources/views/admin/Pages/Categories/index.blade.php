@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('name','Category')
 @section('content')
-    
+    <h1 class="page-title">Categories</h1>
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-6 offset-md-3">
@@ -10,7 +10,7 @@
                         <h5>Create Category</h5>
                     </div>
                     <div class="card-body">
-                        <form action="#" method="post">
+                        <form action="{{route('adminpanel.category.store')}}" method="post">
                             @csrf
                                 <div class="form-group mb-3">
                                     <label for="name">Name</label>
