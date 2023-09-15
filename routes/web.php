@@ -49,6 +49,7 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function(){
     //categories
     Route::group(['prefix' => 'categories'], function(){
         Route::get('/', [CategoryController::class, 'index'])->name('adminpanel.categories');
-        });
+        Route::post('/', [CategoryController::class, 'store'])->name('adminpanel.category.store');
+    });
 });
 
