@@ -68,7 +68,7 @@ body {
   display: flex;
   flex-direction: column;
   list-style: none;
-  gap: 50px;
+  gap: 25px;
   padding: 0 10px;
 }
 .side-nav ul li a {
