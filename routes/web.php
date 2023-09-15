@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
@@ -44,5 +45,10 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function(){
     Route::get('/create', [ProductController::class, 'create'])->name('adminpanel.create');
     Route::post('/create', [ProductController::class, 'store'])->name('adminpanel.store');
     });
+
+    //categories
+    Route::group(['prefix' => 'categories'], function(){
+        Route::get('/', [CategoryController::class, 'index'])->name('adminpanel.categories');
+        });
 });
 
