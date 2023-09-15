@@ -15,6 +15,10 @@
     </li>
 
     <li>
+        <a href="">Colors</a>
+    </li>
+
+    <li>
         <a href="">Categories</a>
     </li>
 
