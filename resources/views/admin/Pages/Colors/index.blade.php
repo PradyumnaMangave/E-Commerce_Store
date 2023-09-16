@@ -62,12 +62,10 @@
                                 <td>{{$color->id}}</td>
                                 <td>{{$color->name}}</td>
                                 <td>
-                                    <div style="display: flex; align-items:center;gap:10px">
-                                    {{$color->code}} <span style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background : {{$color->code}};"></span>
-
-                                    </div>
+                                    {{$color->code}}
+                                    <span style="display: inline-block; width:30px; height:30px;"></span>
                                 </td>
-                                <td></td>
+                                <td>-</td>
                                 <td>{{\Carbon\Carbon::parse($color->created_at)->format('d/m/y')}}</td>
                                 <td><form action="{{route('adminpanel.colors.destroy', $color->id)}}" method="post" >
                                     @csrf
