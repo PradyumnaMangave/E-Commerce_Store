@@ -7,19 +7,19 @@
 
 <ul>
     <li>
-        <a href="">Dashboard</a>
+        <a href="{{route('adminpanel')}}">Dashboard</a>
     </li>
 
     <li>
-        <a href="">Products</a>
+        <a href="{{route('adminpanel.products')}}">Products</a>
     </li>
 
     <li>
-        <a href="">Colors</a>
+        <a href="{{route('adminpanel.colors')}}">Colors</a>
     </li>
 
     <li>
-        <a href="">Categories</a>
+        <a href="{{route('adminpanel.categories')}}">Categories</a>
     </li>
 
     <li>
