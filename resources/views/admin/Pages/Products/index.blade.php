@@ -3,6 +3,8 @@
 @section('content')
 <h1 class="page-title">Products</h1>
 <div class="container">
+<a href="{{route('adminpanel.products.create')}}" class="btn btn-primary">+ &nbsp; Create Product</a>
+
 <div class="row">
             <div class="col-12">
                 <div class="card-header">
