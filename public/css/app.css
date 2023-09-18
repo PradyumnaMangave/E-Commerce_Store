@@ -27,6 +27,11 @@ body {
   width: 100%;
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 .menu {
   background: #6100ff;
   height: 60px;
@@ -162,4 +167,8 @@ ul li a:hover {
   font-size: 15px;
   border-radius: 200px;
   border: 1px solid #ddd;
+}
+
+.accounts-page {
+  padding: 50px 15px;
 }
