@@ -14,7 +14,7 @@ class ProductController extends Controller
     //display products table
     public function index()
     {
-        $products= Product::with('category')->orderBy('created_at','asc')->get();
+        $products= Product::with('category','colors')->orderBy('created_at','asc')->get();
         return view('admin.pages.products.index',['products'=>$products]);
     }
 
@@ -40,7 +40,7 @@ class ProductController extends Controller
 
         //store image
         $image_name ='products/' . time() . rand(0,999) . '.' . $request->image->getClientOriginalExtension();
-        $request->image->storeAs('public',$image_name);
+        $request->image->storeAs('public', $image_name);
         
         //store  data
         $product = Product::create([
@@ -58,20 +58,61 @@ class ProductController extends Controller
     }
 
     //edit
-    public function edit()
-    {
-        return 'edit product';
-    }
+    public function edit($id)
+{
+    $products = Product::findOrFail($id);
+    $categories = Category::all();
+    $colors = Color::all();
+
+    return view('admin.pages.products.edit', [
+        'categories' => $categories,
+        'colors' => $colors,
+        'product' => $products,
+    ]);
+}
+
 
     //update
-    public function update()
+    public function update(Request $request,$id)
     {
-        return 'update product';
+        //validate
+        $request->validate([
+            'title' => 'required|max:255',
+            'price' => 'required',
+            'category_id' => 'required',
+            'colors' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        //store image
+        $image_name = $product->image;
+        if($request->image)
+        {
+            $image_name ='products/' . time() . rand(0,999) . '.' . $request->image->getClientOriginalExtension();
+            $request->image->storeAs('public', $image_name);    
+        }
+        
+        //store  data
+        $product->update([
+            'title' => $request->title,
+            'price' => $request->price*100,
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'image' => $image_name
+        ]);
+        
+        $product->colors()->sync($request->colors);
+
+        //return view
+        return back()->with('success','Product Updated');
     }
 
     //destroy
-    public function delete()
-    {
-        return 'delete product';
+    public function destroy($id){
+        
+        Product::findOrFail($id)->delete();
+        return back()->with('success' , 'Product Deleted');
     }
 }
