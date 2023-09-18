@@ -1,16 +1,16 @@
 @extends('Layouts.admin')
 @section('name','Products')
 @section('content')
-<h1 class="page-title">Create Products</h1>
+<h1 class="page-title">Create Product</h1>
 <div class="container">
     <div class="row mb-5">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h5>Create Products</h5>
+                <h5>Create Product</h5>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('adminpanel.products.store') }}" method="post" enctype="multipart/form-data  ">
+                    <form action="{{ route('adminpanel.products.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <div class="col-md-6">
@@ -99,7 +99,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea name="ddescription" id="description" cols="30" rows="10"  class="form-control" @error('description') is-invalid @enderror placeholder="Describe Your Product"></textarea>                               
+                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control @error('description') is-invalid @enderror" placeholder="Describe Your Product"></textarea>
                                     @error('description')
                                     <span class="invalid-feedback">
                                         <strong>{{ $message }}</strong>
