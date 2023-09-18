@@ -27,6 +27,10 @@
                     <div class="field">
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
+                    <div class="field">
+                        Don't Have Acccount? <a href="{{route('register')}}" class="btn btn-primary"> Register</a>
+
+                    </div>
                 </form>
             </div>
         </div>
