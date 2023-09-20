@@ -27,6 +27,8 @@ Route::get('/wish-list', [PageController::class,'wishlist'])->name('wishlist');
 
 Route::get('/account', [PageController::class,'account'])->name('account')->middleware('auth');
 
+Route::get('/products/{id}', [PageController::class,'product'])->name('product');
+
 
 //Auth
 Route::get('/login', [AuthController::class,'showLogin'])->name('login')->middleware('guest');
