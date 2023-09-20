@@ -29,4 +29,9 @@ class PageController extends Controller
     public function account(){
         return view('/pages/account');
     }
+
+    public function product($id){
+        $product = Product::with('category','colors')->findOrFail($id);
+        return view('pages.product', ['product' =>$product]);
+    }
 }
