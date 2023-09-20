@@ -124,6 +124,24 @@ ul li a:hover {
   outline: none;
 }
 
+.products-section {
+  padding: 70px 0;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #260064;
+  margin-bottom: 30px;
+}
+
+.products-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
 .login-page {
   min-height: 85vh;
   background: #f5f5f5;
@@ -171,4 +189,56 @@ ul li a:hover {
 
 .accounts-page {
   padding: 50px 15px;
+}
+
+.product-box {
+  border-radius: 3px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 8px 40px 0 rgba(49, 32, 138, 0.05);
+  text-align: center;
+  max-width: 270px;
+}
+
+.image {
+  background: #f6f7fb;
+  height: 230px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: Green;
+  margin-bottom: 10px;
+}
+
+.color-plateletes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.color-plateletes .color-platelete {
+  width: 20px;
+  height: 5px;
+  border-radius: 10px;
+  background: #000;
+}
+
+.product-categoty {
+  color: #6f6f6f;
+  font-style: italic;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+.product-categoty .product-price {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
