@@ -12,7 +12,7 @@
                     <p class="p-price">${{$product->price/100}}</p>
                     <p class="p-category">- {{$product->category->name}}</p>
                     <p class="p-description">-{{$product->description}}</p>
-                    <form action="" action="post">
+                    <form action="{{ route('addToCart', $product->id) }}" method="post">
                         @csrf
                         <div class="p-form">
                             <div class="p-colors">
