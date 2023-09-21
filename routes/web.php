@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ColorController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/wish-list', [PageController::class,'wishlist'])->name('wishlist');
 Route::get('/account', [PageController::class,'account'])->name('account')->middleware('auth');
 
 Route::get('/products/{id}', [PageController::class,'product'])->name('product');
+
+//cart
+Route::post('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('addToCart');
 
 
 //Auth
