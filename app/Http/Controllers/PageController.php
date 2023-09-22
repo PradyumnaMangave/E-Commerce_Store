@@ -34,4 +34,8 @@ class PageController extends Controller
         $product = Product::with('category','colors')->findOrFail($id);
         return view('pages.product', ['product' =>$product]);
     }
+
+    public function checkout(){
+        return view('pages.checkout');
+    }
 }
