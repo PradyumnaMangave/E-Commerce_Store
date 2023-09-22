@@ -30,9 +30,13 @@ Route::get('/account', [PageController::class,'account'])->name('account')->midd
 
 Route::get('/products/{id}', [PageController::class,'product'])->name('product');
 
+Route::get('/checkout', [PageController::class,'checkout'])->name('checkout')->middleware('auth');
+
+
 //cart
 Route::post('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('addToCart');
 
+Route::post('/remove-from-cart/{id}', [CartController::class,'removeFromCart'])->name('removeFromCart');
 
 //Auth
 Route::get('/login', [AuthController::class,'showLogin'])->name('login')->middleware('guest');
