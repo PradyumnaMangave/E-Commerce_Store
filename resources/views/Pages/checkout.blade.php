@@ -1,7 +1,38 @@
     @extends('layouts.master')
     @section('name','Checkout')
-    @section('content')
+    @section('head')
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{{('js/stripe.js')}}"></script>
+    <style>
+        .StripeElement {
+            height: 20px;
+            padding: 10px 12px;
+            width: 100%;
+            color: #32325d;
+            background-color: white;
+            border: 1px solid transparent;
+            border-radius: 4px;
+
+            box-shadow: 0 1px 3px 0 #e6ebf1; 
+            -webkit-transition: box-shadow 150ms ease; 
+            transition: box-shadow 150ms ease;
+            margin-bottom: 20px
+        }
         
+        .StripeElement-focus {
+            box-shadow: 0 1px 3px 0 #cfd7df;
+        }
+        
+        .StripeElement-invalid { 
+            border-color: #fa755a;
+        }
+        
+        .StripeElement-webkit-autofill {
+            background-color: #fefde5 !important;
+        }
+    </style>
+    @endsection
+    @section('content')
         <header class="page-header">
             <h1>Checkout</h1>
             <h3 class="cart-amount">${{App\Models\Cart::totalAmount()}}</h3>
@@ -10,7 +41,7 @@
         <main class="checkout-page">
             <div class="container">
                 <div class="checkout-form">
-                    <form action="" id="payment-form" method="post">
+                    <form action="{{route('stripeCheckout')}}" id="payment-form" method="post">
                         @csrf
                         <div class="field">
                             <label for="name">Name</label>
@@ -71,9 +102,66 @@
                             @enderror
                         </div>
 
+                        <input type="hidden" name="payment_method_id" id="payment_method_id" value="">
+                        
+                        <label>
+                            Card Details
+                            <div id="card-element"></div>
+                        </label>
+                        <button type="submit" class="btn btn-block btn-primary">Submit Payment</button>
+
                     </form>
                 </div>
             </div>
         </main>
 
+
+        <script>
+        var stripe = Stripe('ok_test_51L60mlHxyFtMcKLAIFs2NwdnrYPpxEHbCg1lyR2FCIlrr1Mk30LBDQW6EGYIKaPnO8uu300yM4jAck');
+        var elements = stripe.elements();
+        // Set up Stripe.js and Elements to use in checkout for
+        var style = {
+            base: {
+                color: "#32325d",
+                fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                fontSmoothing: "antialiased",
+                fontSize: "16px",
+                "::placeholder": {
+                color: "#aab7c4"
+                }
+            },
+            
+            invalid: {
+                color: "#fa755a",
+                iconColor: "#fa755a"
+            },
+        };
+        var cardElement = elements.create('card', {style: style});
+        cardElement.mount('#card-element');
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            // We don't want to let default form submission happen here,
+            // which would refresh the page.
+            event.preventDefault();
+            
+            stripe.createPaymentMethod({
+                type: 'card',
+                card: cardElement,
+                billing_details: {
+                    // Include any additional collected billing details.
+                    name: 'Test Name',
+                },
+            }).then(stripePaymentMethodHandler);
+        });
+        
+        function stripePaymentMethodHandler(result) {
+            if (result.error) {
+
+            } else {
+            document.getElementById('payment_method_id').value=  result.paymentMethod.id
+            form.submit();
+            }
+        }
+
+</script>
     @endsection
