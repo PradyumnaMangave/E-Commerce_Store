@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\checkoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,11 @@ Route::get('/wish-list', [PageController::class,'wishlist'])->name('wishlist');
 
 Route::get('/account', [PageController::class,'account'])->name('account')->middleware('auth');
 
+Route::get('/checkout', [pageController::class,'checkout'])->name('checkout')->middleware('auth');
+
 Route::get('/products/{id}', [PageController::class,'product'])->name('product');
 
-Route::get('/checkout', [PageController::class,'checkout'])->name('checkout')->middleware('auth');
-
+Route::post('/stripe-checkout', [checkoutController::class,'stripeCheckout'])->name('stripeCheckout')->middleware('auth');
 
 //cart
 Route::post('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('addToCart');
