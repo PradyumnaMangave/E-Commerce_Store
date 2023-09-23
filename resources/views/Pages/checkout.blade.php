@@ -2,7 +2,7 @@
     @section('name','Checkout')
     @section('head')
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="{{('js/stripe.js')}}"></script>
+    <script src="{{('js/checkout.js')}}"></script>
     <style>
         .StripeElement {
             height: 20px;
@@ -117,7 +117,7 @@
 
 
         <script>
-        var stripe = Stripe('ok_test_51L60mlHxyFtMcKLAIFs2NwdnrYPpxEHbCg1lyR2FCIlrr1Mk30LBDQW6EGYIKaPnO8uu300yM4jAck');
+        var stripe = Stripe('pk_test_51Nt6L1SE5NmV3W6aalsweEahO0wyzRpHPfSQmA1B5pTMbaa5PDPLsUpIjMl4IVanub2iLw4NMxgoX0tFHnoKzQNZ00BPieKQ4O');
         var elements = stripe.elements();
         // Set up Stripe.js and Elements to use in checkout for
         var style = {
