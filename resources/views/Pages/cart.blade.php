@@ -1,3 +1,4 @@
+use App\Models\Cart;
 @extends('layouts.master')
 @section('name','Cart Page')
 @section('content')
@@ -72,7 +73,7 @@
             </div>
 
             <div class="cart-actions">
-                <a href="" class="btn btn-primary">Go To Checkout</a>
+                <a href="{{route('checkout')}}" class="btn btn-primary">Go To Checkout</a>
             </div>
             
         </div>
