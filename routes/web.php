@@ -21,6 +21,8 @@ use App\Http\Controllers\checkoutController;
 |
 */
 
+Route::get('/success', [PageController::class,'success'])->name('success');
+
 Route::get('/', [PageController::class,'home'])->name('home');
 
 Route::get('/cart', [PageController::class,'cart'])->name('cart');
