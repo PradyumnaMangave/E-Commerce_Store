@@ -35,7 +35,7 @@
     @section('content')
         <header class="page-header">
             <h1>Checkout</h1>
-            <h3 class="cart-amount">${{App\Models\Cart::totalAmount()}}</h3>
+            <h3 class="cart-amount">${{ session('cart') ? App\Models\Cart::totalAmount() : 0 }}</h3>
         </header>
 
         <main class="checkout-page">
@@ -90,6 +90,14 @@
                             <label for="city">City</label>
                             <input type="text" id="city" name="city" class=" @error('city') has-error @enderror" placeholder="Enter Your City" value="{{old('city')}}">
                             @error('city')
+                            <span class="field-error">{{$message}}</span>
+                            @enderror
+                        </div>
+
+                        <div class="field">
+                            <label for="address">Address</label>
+                            <input type="text" id="address" name="address" class=" @error('address') has-error @enderror" placeholder="Enter Your Address" value="{{old('address')}}">
+                            @error('address')
                             <span class="field-error">{{$message}}</span>
                             @enderror
                         </div>
