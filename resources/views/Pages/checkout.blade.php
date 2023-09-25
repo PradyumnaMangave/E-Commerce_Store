@@ -1,4 +1,4 @@
-    @extends('layouts.master')
+@extends('layouts.master')
     @section('name','Checkout')
     @section('head')
     <script src="https://js.stripe.com/v3/"></script>
