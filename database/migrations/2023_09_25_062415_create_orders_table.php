@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('country')->nullable();
+            $table->string('zip')->nullable();
             $table->bigInteger('total')->default(0);
             $table->string('stripe_id')->nullable();
             $table->string('status')->default('pending');
