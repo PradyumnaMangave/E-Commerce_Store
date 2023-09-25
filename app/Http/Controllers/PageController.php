@@ -38,4 +38,8 @@ class PageController extends Controller
     public function checkout(){
         return view('pages.checkout');
     }
+
+    public function success(){
+        return "Successfully done";
+    }
 }
