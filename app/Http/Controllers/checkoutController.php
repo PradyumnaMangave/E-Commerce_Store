@@ -75,7 +75,7 @@ class checkoutController extends Controller
 
         session()->forget('cart');
         
-        return route('success',['order'=> $order]);
+        return view('pages.orderSuccess',['order'=> $order]);
     }
     
 }
