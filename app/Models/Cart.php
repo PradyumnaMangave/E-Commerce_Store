@@ -18,9 +18,12 @@ class Cart
     public static function totalAmount()
     {
         $total = 0;
-        foreach(session('cart') as $item)
-        {
-            $total += self::unitPrice($item);
+        // Check if the 'cart' session variable exists and is an array
+        if (session()->has('cart') && is_array(session('cart'))) {
+            foreach (session('cart') as $item)
+            {
+                $total += self::unitPrice($item);
+            }
         }
         return $total;
     }
