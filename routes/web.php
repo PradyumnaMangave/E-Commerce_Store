@@ -9,6 +9,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\checkoutController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,6 +84,12 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function(){
         Route::post('/', [ColorController::class, 'store'])->name('adminpanel.colors.store');
         Route::delete('/{id}', [ColorController::class, 'destroy'])->name('adminpanel.colors.destroy');
 
+    });
+
+    //orders
+    Route::group(['prefix' => 'orders'], function(){
+        Route::get('/', [OrderController::class, 'index'])->name('adminpanel.orders');
+        Route::get('/{id}', [OrderController::class, 'index'])->name('adminpanel.orders.view');
     });
 });
 
