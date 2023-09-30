@@ -89,7 +89,8 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function(){
     //orders
     Route::group(['prefix' => 'orders'], function(){
         Route::get('/', [OrderController::class, 'index'])->name('adminpanel.orders');
-        Route::get('/{id}', [OrderController::class, 'index'])->name('adminpanel.orders.view');
+        Route::get('/{id}', [OrderController::class, 'view'])->name('adminpanel.orders.view');
+        Route::post('/{id}', [OrderController::class, 'updateStatus'])->name('adminpanel.orders.status.update');
     });
 });
 
