@@ -16,16 +16,16 @@ class Item extends Model
 
     public function product()
     {
-        $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class);
     }
 
-    public function orders()
+    public function order()
     {
-        $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class);
     }
 
     public function color()
     {
-        $this->belongsTo(Color::class);
+        return $this->belongsTo(Color::class);
     }
 }
